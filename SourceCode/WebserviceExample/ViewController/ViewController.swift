@@ -9,9 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let loginViewModel = LoginViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        callGetAPI()
+    }
+    
+    func callGetAPI()  {
+        loginViewModel.callGETAPI()
+        
+        
     }
 }
 
