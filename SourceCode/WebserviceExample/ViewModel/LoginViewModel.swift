@@ -8,12 +8,19 @@
 
 import UIKit
 
+import SwiftyJSON
+
 class LoginViewModel: NSObject {
 
     func callGETAPI() {
         // get api sample
         ApiManager.sharedInstance.requestFor(urlPath: "https://www.restcountries.eu/rest/v2/all", param: nil, httpMethod: .get, includeHeader: false, success: { (response) in
             print(response)
+            
+            let json = JSON(response).arrayValue
+            
+            print(json)
+            
         }, failure: { [weak self] (response, error) in
             print(response, error)
         })
